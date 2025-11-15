@@ -1,16 +1,20 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 const EstiloGlobal = createGlobalStyle`
-  *{
+  /* Reset */
+  * {
     margin: 0;
     padding: 0;
-    font-family: "Inter", sans-serif;
-
-
+    box-sizing: border-box;
   }
 
-
+  /* Fonte principal */
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: ${({ theme }) => theme.corDefundo};
+  }
 `
+
 export default EstiloGlobal
 
 export const Container = styled.div`
@@ -18,9 +22,10 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 128px auto;
+  grid-template-columns: 130px auto;
   column-gap: 56px;
   padding-top: 80px;
+  padding-bottom: 80px;
   font-family: 'Inter', sans-serif;
   list-style: none;
 
@@ -28,9 +33,5 @@ export const Container = styled.div`
     max-width: 80%;
     display: block;
     padding-top: 16px;
-  }
-
-  img {
-    max-width: 100%;
   }
 `
